@@ -3,666 +3,1214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EnLínea Solutions - Plan de Crecimiento Abril-Mayo 2026</title>
+<title>Plasma Flow, Cepillo Rizador con Tecnología de Plasma e Infrarrojo</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700&display=swap');
+
+  :root {
+    /* Warm premium palette: chocolate, gold, rose gold, champagne */
+    --violet: #c9954a;          /* caramel gold (was violet) */
+    --violet-dark: #a06a2e;     /* burnt caramel */
+    --violet-deep: #5b3a1c;     /* deep cocoa */
+    --rose: #d4a574;            /* rose gold */
+    --rose-light: #e8c896;      /* champagne */
+    --gold: #d4af37;            /* warm gold */
+    --copper: #b87333;          /* copper bronze */
+    --chocolate: #3e2723;       /* dark chocolate */
+    --cream: #f5ede0;           /* cream */
+    --cream-soft: #ebe0cc;      /* warm cream */
+    --cream-deep: #d6c5a8;      /* champagne cream */
+    --dark: #1a1310;            /* warm chocolate-black */
+    --dark-soft: #241b15;       /* warm dark */
+    --dark-card: #2e231a;       /* warm card */
+    --light: #f5ede0;           /* cream text */
+    --gray: #b09b85;            /* warm gray */
+    --gray-soft: #6b5a48;       /* warm gray soft */
+  }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  :root {
-    --bg: #050508;
-    --card: #0f0f18;
-    --card-border: #1e1e2e;
-    --turquesa: #7fd3c2;
-    --turquesa-dim: rgba(127,211,194,0.15);
-    --naranja: #f59e0b;
-    --naranja-dim: rgba(245,158,11,0.15);
-    --rojo: #ef4444;
-    --rojo-dim: rgba(239,68,68,0.12);
-    --verde: #22c55e;
-    --verde-dim: rgba(34,197,94,0.12);
-    --azul: #3b82f6;
-    --azul-dim: rgba(59,130,246,0.12);
-    --morado: #a78bfa;
-    --morado-dim: rgba(167,139,250,0.15);
-    --rosa: #f472b6;
-    --rosa-dim: rgba(244,114,182,0.15);
-    --text: #eeeef2;
-    --text-dim: #8888a0;
-    --text-muted: #55556a;
-  }
-
   body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    background: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
   }
 
-  .page-wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px 80px;
+  /* HEADER - cream */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245, 237, 224, 0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(184, 115, 51, 0.12);
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-
-  /* Cover */
-  .cover {
-    text-align: center;
-    padding: 80px 0 60px;
-    border-bottom: 1px solid var(--card-border);
-    margin-bottom: 48px;
+  .logo {
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, var(--copper), var(--chocolate));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  .cover .subtitle {
-    font-size: 18px; font-weight: 300; color: var(--text-dim);
-    letter-spacing: 4px; text-transform: uppercase; margin-bottom: 12px;
-  }
-  .cover .subtitle .accent { color: var(--turquesa); font-weight: 600; }
-  .cover h1 { font-size: 44px; font-weight: 800; letter-spacing: -1px; }
-  .cover .period { font-size: 14px; color: var(--text-muted); margin-top: 14px; letter-spacing: 1px; }
-  .cover .badge {
-    display: inline-block; background: var(--turquesa-dim); color: var(--turquesa);
-    padding: 8px 24px; border-radius: 100px; font-size: 12px; font-weight: 600;
-    letter-spacing: 1px; text-transform: uppercase; margin-top: 24px;
-  }
-  .cover .doc-purpose {
-    margin-top: 32px;
+  .nav { display: flex; gap: 32px; align-items: center; }
+  .nav a {
+    color: var(--chocolate);
+    text-decoration: none;
     font-size: 14px;
-    color: var(--text-dim);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav a:hover { color: var(--copper); }
+  .nav a.btn-buy-nav {
+    background: linear-gradient(135deg, var(--copper), var(--chocolate));
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(62, 39, 35, 0.2);
+  }
+  .nav a.btn-buy-nav:hover {
+    transform: translateY(-1px);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(62, 39, 35, 0.3);
+  }
+
+  /* HERO - cream + chocolate fusion */
+  .hero {
+    min-height: 90vh;
+    padding: 60px 5% 80px;
+    background:
+      radial-gradient(circle at 15% 25%, rgba(212, 165, 116, 0.18), transparent 55%),
+      radial-gradient(circle at 85% 75%, rgba(184, 115, 51, 0.12), transparent 55%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-soft) 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 100%;
+    color: var(--chocolate);
+  }
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: contents;
+  }
+  .hero-content .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border: 1px solid rgba(184, 115, 51, 0.35);
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 50px;
+    font-size: 12px;
+    color: var(--copper);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--chocolate);
+  }
+  .hero h1 .accent {
+    background: linear-gradient(135deg, var(--copper), var(--violet-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+  }
+  .hero .subtitle {
+    font-size: 1.15rem;
+    color: var(--gray-soft);
+    margin-bottom: 32px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .hero .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .price-current {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--chocolate);
+  }
+  .price-original {
+    font-size: 1.25rem;
+    color: var(--gray-soft);
+    text-decoration: line-through;
+  }
+  .price-save {
+    background: rgba(184, 115, 51, 0.15);
+    color: var(--copper);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--chocolate), var(--violet-deep));
+    color: var(--cream);
+    padding: 18px 38px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 0.3px;
+    transition: all 0.3s;
+    box-shadow: 0 10px 40px rgba(62, 39, 35, 0.25);
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 50px rgba(62, 39, 35, 0.4);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--chocolate);
+    padding: 18px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid rgba(62, 39, 35, 0.25);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(62, 39, 35, 0.05); }
+  .trust-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gray-soft);
+  }
+  .trust-item .check {
+    width: 18px; height: 18px;
+    background: rgba(184, 115, 51, 0.18);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--copper);
+    font-weight: 700;
+    font-size: 11px;
+  }
+
+  /* HERO IMAGE */
+  .hero-image {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 32px;
+    background:
+      radial-gradient(circle at center, rgba(212, 165, 116, 0.35), transparent 70%),
+      linear-gradient(135deg, #fff, var(--cream-soft));
+    border: 1px solid rgba(184, 115, 51, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(62, 39, 35, 0.12);
+  }
+  .hero-image::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(from 0deg, var(--copper), var(--rose), var(--gold), var(--copper));
+    opacity: 0.06;
+    animation: rotate 20s linear infinite;
+  }
+  @keyframes rotate {
+    to { transform: rotate(360deg); }
+  }
+  .image-placeholder {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px;
+  }
+  .image-placeholder .icon {
+    font-size: 80px;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.5));
+  }
+  .image-placeholder .text {
+    color: var(--gray);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+  .image-placeholder .sub {
+    color: var(--gray-soft);
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 5%; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    display: inline-block;
+    color: var(--rose-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .section-title .accent {
+    background: linear-gradient(135deg, var(--violet), var(--rose));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .section-subtitle {
+    font-size: 1.05rem;
+    color: var(--gray);
     max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 56px;
+    font-weight: 300;
+  }
+  .center { text-align: center; }
+  .center .section-subtitle { margin-left: auto; margin-right: auto; }
+
+  /* PROBLEMA */
+  .problem {
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-soft) 100%);
+  }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .problem-card {
+    background: var(--dark-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 32px;
+  }
+  .problem-card .num {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(236, 72, 153, 0.12);
+    color: var(--rose-light);
+    font-weight: 800;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+  }
+  .problem-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .problem-card p {
+    color: var(--gray);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* TECNOLOGIA - cream background for contrast */
+  .tech {
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+    color: var(--chocolate);
+  }
+  .tech::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.18), transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .tech .section-label { color: var(--copper); }
+  .tech .section-title { color: var(--chocolate); }
+  .tech .section-subtitle { color: var(--gray-soft); }
+  .tech .section-title .accent {
+    background: linear-gradient(135deg, var(--copper), var(--violet-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .tech-card {
+    background: linear-gradient(135deg, #fff, var(--cream-soft));
+    border: 1px solid var(--cream-deep);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(94, 58, 28, 0.08);
+  }
+  .tech-card .tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(184, 115, 51, 0.15);
+    color: var(--copper);
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .tech-card.rose .tag {
+    background: rgba(212, 165, 116, 0.2);
+    color: var(--violet-dark);
+  }
+  .tech-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: var(--chocolate);
+  }
+  .tech-card p {
+    color: var(--gray-soft);
+    font-size: 0.95rem;
     line-height: 1.7;
   }
 
-  /* Section */
-  .section {
-    padding: 56px 0;
-    border-bottom: 1px solid var(--card-border);
-  }
-  .section:last-child { border-bottom: none; }
-
-  .section-header { margin-bottom: 32px; }
-  .section-header .tag {
-    font-size: 11px; font-weight: 700; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--turquesa); margin-bottom: 8px;
-  }
-  .section-header h2 { font-size: 30px; font-weight: 800; letter-spacing: -1px; line-height: 1.15; }
-  .section-header p { color: var(--text-dim); font-size: 14px; margin-top: 8px; max-width: 720px; }
-
-  /* Grids */
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-
-  /* Mirror cards */
-  .mirror-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; }
-  .mirror-card .pill { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
-  .mirror-card .pill.naranja { background: var(--naranja-dim); color: var(--naranja); }
-  .mirror-card .pill.rojo { background: var(--rojo-dim); color: var(--rojo); }
-  .mirror-card .pill.azul { background: var(--azul-dim); color: var(--azul); }
-  .mirror-card .pill.morado { background: var(--morado-dim); color: var(--morado); }
-  .mirror-card .pill.rosa { background: var(--rosa-dim); color: var(--rosa); }
-  .mirror-card .pill.verde { background: var(--verde-dim); color: var(--verde); }
-  .mirror-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-  .mirror-card p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
-
-  /* Service card */
-  .service-card {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 14px;
-    padding: 26px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  .service-card .s-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--turquesa); margin-bottom: 8px; }
-  .service-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
-  .service-card .s-model { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; letter-spacing: 0.5px; }
-  .service-card .s-price { font-size: 26px; font-weight: 800; color: var(--turquesa); margin-bottom: 4px; letter-spacing: -0.5px; }
-  .service-card .s-price-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 16px; }
-  .service-card .s-includes { font-size: 13px; color: var(--text); }
-  .service-card .s-includes ul { list-style: none; padding: 0; margin: 8px 0 0; }
-  .service-card .s-includes li { padding-left: 16px; position: relative; margin-bottom: 6px; line-height: 1.5; color: var(--text-dim); }
-  .service-card .s-includes li::before { content: "+"; position: absolute; left: 0; color: var(--turquesa); font-weight: 700; }
-
-  .service-card.naranja .s-tag { color: var(--naranja); }
-  .service-card.naranja .s-price { color: var(--naranja); }
-  .service-card.naranja .s-includes li::before { color: var(--naranja); }
-
-  .service-card.rosa .s-tag { color: var(--rosa); }
-  .service-card.rosa .s-price { color: var(--rosa); }
-  .service-card.rosa .s-includes li::before { color: var(--rosa); }
-
-  .service-card.morado .s-tag { color: var(--morado); }
-  .service-card.morado .s-price { color: var(--morado); }
-  .service-card.morado .s-includes li::before { color: var(--morado); }
-
-  /* Case card */
-  .case-card {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 14px;
-    padding: 22px;
-  }
-  .case-card .c-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-  .case-card .c-service { font-size: 11px; color: var(--turquesa); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
-  .case-card .c-scope { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin-bottom: 14px; }
-  .case-card .c-revenue { padding-top: 12px; border-top: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center; }
-  .case-card .c-revenue .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-  .case-card .c-revenue .value { font-size: 14px; font-weight: 700; color: var(--turquesa); }
-
-  /* Week block */
-  .week-block {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 14px;
-    padding: 24px;
-    margin-bottom: 14px;
+  /* BENEFICIOS */
+  .benefits-grid {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
-  .week-block .week-side .week-num { font-size: 11px; font-weight: 800; color: var(--turquesa); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
-  .week-block .week-side .week-dates { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
-  .week-block .week-side .week-focus { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
-  .week-block ul { list-style: none; padding: 0; margin: 0; }
-  .week-block li { font-size: 13.5px; color: var(--text); line-height: 1.6; padding-left: 18px; position: relative; margin-bottom: 8px; }
-  .week-block li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--turquesa); }
-  .week-block li:last-child { margin-bottom: 0; }
-
-  /* Decision card */
-  .decision-card {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-left: 3px solid var(--naranja);
-    border-radius: 10px;
-    padding: 18px 22px;
-    margin-bottom: 12px;
+  .benefit {
+    text-align: center;
+    padding: 32px 24px;
+    background: var(--dark-card);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform 0.3s, border-color 0.3s;
   }
-  .decision-card .d-label { font-size: 11px; font-weight: 700; color: var(--naranja); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
-  .decision-card .d-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-  .decision-card .d-context { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
-  .decision-card .d-fill {
-    margin-top: 12px;
-    padding: 10px 14px;
-    background: rgba(127,211,194,0.05);
-    border: 1px dashed rgba(127,211,194,0.3);
-    border-radius: 8px;
-    font-size: 12px;
-    color: var(--text-dim);
+  .benefit:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+  .benefit .icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  .benefit h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .benefit p {
+    color: var(--gray);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  /* SPECS */
+  .specs {
+    background: var(--dark-soft);
+  }
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .spec-item {
+    background: var(--dark-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 22px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .spec-item .label {
+    color: var(--gray);
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .spec-item .value {
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: right;
+  }
+
+  /* COMPARACION - cream contrast */
+  .compare-section {
+    background: var(--cream);
+    color: var(--chocolate);
+  }
+  .compare-section .section-label { color: var(--copper); }
+  .compare-section .section-title { color: var(--chocolate); }
+  .compare-section .section-title .accent {
+    background: linear-gradient(135deg, var(--copper), var(--chocolate));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .compare-table {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--cream-deep);
+    margin-top: 40px;
+    box-shadow: 0 20px 60px rgba(94, 58, 28, 0.1);
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--cream-soft);
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row > div {
+    padding: 18px 24px;
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--chocolate);
+  }
+  .compare-row > div:first-child {
+    justify-content: flex-start;
+    font-weight: 600;
+    color: var(--chocolate);
+  }
+  .compare-row.head > div {
+    background: var(--cream-soft);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-soft);
+    padding: 18px 24px;
+  }
+  .compare-row.head .pf-col {
+    background: linear-gradient(135deg, var(--copper), var(--violet-dark));
+    color: #fff;
+  }
+  .pf-col {
+    background: rgba(212, 165, 116, 0.12);
+    font-weight: 700;
+    color: var(--chocolate) !important;
+  }
+  .yes { color: #2d7a3a; font-size: 1.4rem; }
+  .no { color: #c55a3e; font-size: 1.4rem; }
+
+  /* TESTIMONIOS */
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .testi {
+    background: var(--dark-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 32px;
+  }
+  .testi .stars {
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+  .testi .quote {
+    font-size: 0.95rem;
+    color: var(--light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .testi .author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .testi .avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--violet), var(--rose));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    color: #fff;
+  }
+  .testi .name {
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+  .testi .role {
+    color: var(--gray);
+    font-size: 0.78rem;
+  }
+  .testi-note {
+    text-align: center;
+    margin-top: 24px;
+    color: var(--gray-soft);
+    font-size: 0.78rem;
     font-style: italic;
   }
 
-  /* Role card */
-  .role-card {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    padding: 22px;
+  /* FAQ */
+  .faq {
+    background: var(--dark-soft);
   }
-  .role-card .r-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-  .role-card .r-position { font-size: 11px; color: var(--turquesa); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
-  .role-card .r-resp { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
-  .role-card .r-resp ul { list-style: none; padding: 0; margin: 6px 0 0; }
-  .role-card .r-resp li { padding-left: 14px; position: relative; margin-bottom: 4px; }
-  .role-card .r-resp li::before { content: "→"; position: absolute; left: 0; color: var(--turquesa); }
-  .role-card.placeholder { border-style: dashed; border-color: rgba(127,211,194,0.3); }
-  .role-card.placeholder .r-position { color: var(--text-muted); }
-
-  /* KPI */
-  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-  .kpi { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; }
-  .kpi .label { font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
-  .kpi .value { font-size: 24px; font-weight: 800; margin-top: 6px; letter-spacing: -0.5px; color: var(--turquesa); }
-  .kpi .sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
-
-  /* Out of scope */
-  .out-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .out-item {
-    padding: 14px 18px;
-    background: rgba(239,68,68,0.04);
-    border: 1px solid rgba(239,68,68,0.15);
-    border-radius: 10px;
-    font-size: 13.5px;
-    color: var(--text-dim);
+  .faq-list {
+    max-width: 800px;
+    margin: 40px auto 0;
+  }
+  .faq-item {
+    background: var(--dark-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 20px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    list-style: none;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
   }
-  .out-item::before { content: "—"; color: var(--rojo); font-weight: 700; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.4rem;
+    color: var(--rose-light);
+    transition: transform 0.2s;
+  }
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+  .faq-item .answer {
+    padding: 0 24px 22px;
+    color: var(--gray);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
 
-  /* Note */
-  .note { padding: 16px 20px; background: var(--turquesa-dim); border: 1px solid rgba(127,211,194,0.25); border-radius: 10px; font-size: 13px; color: var(--turquesa); line-height: 1.6; margin-top: 24px; }
-  .note strong { color: var(--turquesa); font-weight: 700; }
-
-  /* Links */
-  a { color: var(--turquesa); text-decoration: none; border-bottom: 1px dotted var(--turquesa); }
-  a:hover { color: var(--text); border-color: var(--text); }
-
-  /* Footer */
-  .footer {
+  /* GARANTIA */
+  .warranty {
+    background: linear-gradient(135deg, rgba(184, 115, 51, 0.18), rgba(212, 175, 55, 0.10));
+    border-top: 1px solid rgba(184, 115, 51, 0.25);
+    border-bottom: 1px solid rgba(184, 115, 51, 0.25);
+  }
+  .warranty-inner {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
-    padding: 60px 0 20px;
-    color: var(--text-muted);
-    font-size: 12px;
-    line-height: 1.8;
+  }
+  .warranty-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+  .warranty h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .warranty p {
+    color: var(--gray);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto;
   }
 
-  @media (max-width: 800px) {
-    .grid-2, .grid-3, .grid-4, .kpi-row, .out-list {
-      grid-template-columns: 1fr;
-    }
-    .week-block { grid-template-columns: 1fr; gap: 16px; }
-    .page-wrap { padding: 0 20px 60px; }
-    .cover h1 { font-size: 34px; }
+  /* CTA FINAL */
+  .cta-final {
+    background:
+      radial-gradient(circle at 30% 50%, rgba(184, 115, 51, 0.25), transparent 60%),
+      radial-gradient(circle at 70% 50%, rgba(212, 175, 55, 0.15), transparent 60%),
+      var(--dark);
+    text-align: center;
+  }
+  .cta-final h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--cream);
+  }
+  .cta-final p {
+    color: var(--gray);
+    font-size: 1.1rem;
+    margin-bottom: 36px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-final .price-row {
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .cta-final .price-current { color: var(--cream); }
+  .cta-final .price-original { color: var(--gray); }
+  .cta-final .price-save {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--rose-light);
+  }
+  .cta-final .btn-primary {
+    background: linear-gradient(135deg, var(--copper), var(--gold));
+    color: var(--chocolate);
+    box-shadow: 0 10px 40px rgba(184, 115, 51, 0.4);
+  }
+  .cta-final .btn-primary:hover {
+    box-shadow: 0 14px 50px rgba(184, 115, 51, 0.6);
+  }
+  .cta-final .trust-item { color: var(--gray); }
+  .cta-final .trust-item .check {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--rose-light);
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 50px 5% 30px;
+    text-align: center;
+  }
+  .footer .logo { margin-bottom: 16px; }
+  .footer p {
+    color: var(--gray);
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+  .footer .legal {
+    color: var(--gray-soft);
+    font-size: 0.75rem;
+    margin-top: 24px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding: 40px 5% 60px; }
+    .nav { display: none; }
+    section { padding: 60px 5%; }
+    .problem-grid, .benefits-grid, .testi-grid { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: 1fr; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .compare-row { grid-template-columns: 1fr; }
+    .compare-row > div { justify-content: flex-start !important; }
+    .compare-row.head { display: none; }
   }
 </style>
 </head>
 <body>
-<div class="page-wrap">
 
-  <!-- COVER -->
-  <div class="cover">
-    <div class="subtitle"><span class="accent">En</span>Línea Solutions</div>
-    <h1>Plan de Crecimiento</h1>
-    <div class="period">27 abril 2026 → 27 mayo 2026 · 4 semanas</div>
-    <div class="badge">Mes 1 · base de adquisición</div>
-    <div class="doc-purpose">
-      Espejo del estado actual, oferta empacada, casos activos y plan de adquisición por semanas.
-      Documento operativo para tomar decisiones sin tener que volver a discutirlas cada vez.
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">PLASMA FLOW</div>
+  <nav class="nav">
+    <a href="#tecnologia">Tecnología</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#especificaciones">Especificaciones</a>
+    <a href="#faq">FAQ</a>
+    <a href="#comprar" class="btn-buy-nav">Comprar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">★ Edición limitada</div>
+    <h1>Cepillo, rizador y <span class="accent">tecnología de plasma</span> en uno solo.</h1>
+    <p class="subtitle">
+      Plasma Flow combina el acabado pulido de un cepillo redondo con el volumen y las ondas de un rizador.
+      Tecnología de plasma e infrarrojo para brillo profesional y mínimo daño térmico, todo en una sola herramienta.
+    </p>
+
+    <div class="price-row">
+      <span class="price-current">$129.99</span>
+      <span class="price-original">$189.99</span>
+      <span class="price-save">Ahorra 32%</span>
+    </div>
+
+    <div class="cta-row">
+      <a href="#comprar" class="btn-primary">Comprar ahora</a>
+      <a href="#tecnologia" class="btn-secondary">Ver tecnología</a>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust-item"><span class="check">✓</span> Envío a todo Panamá</div>
+      <div class="trust-item"><span class="check">✓</span> Garantía de 12 meses</div>
+      <div class="trust-item"><span class="check">✓</span> Pago con tarjeta o Yappy</div>
     </div>
   </div>
 
-  <!-- SECCIÓN 1: EL ESPEJO -->
-  <div class="section">
-    <div class="section-header">
-      <div class="tag">01 · El Espejo</div>
-      <h2>Cómo está EnLínea hoy</h2>
-      <p>Lectura honesta del estado actual. Si algo cambia a mitad de mes, se actualiza acá primero antes de ajustar el plan.</p>
-    </div>
+  <div class="hero-image">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="position: relative; z-index: 2; width: 85%; height: 85%; filter: drop-shadow(0 30px 60px rgba(62, 39, 35, 0.35));">
+      <defs>
+        <linearGradient id="barrelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f5e0c0"/>
+          <stop offset="30%" stop-color="#d4a574"/>
+          <stop offset="60%" stop-color="#a06a2e"/>
+          <stop offset="100%" stop-color="#3e2723"/>
+        </linearGradient>
+        <linearGradient id="barrelGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#d4af37" stop-opacity="0.0"/>
+          <stop offset="50%" stop-color="#e8c896" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#d4af37" stop-opacity="0.0"/>
+        </linearGradient>
+        <linearGradient id="handleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#3e2723"/>
+          <stop offset="50%" stop-color="#2a1a13"/>
+          <stop offset="100%" stop-color="#1a0e08"/>
+        </linearGradient>
+        <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#d4af37"/>
+          <stop offset="100%" stop-color="#b87333"/>
+        </linearGradient>
+        <radialGradient id="endCap" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#c9954a"/>
+          <stop offset="100%" stop-color="#3e2723"/>
+        </radialGradient>
+      </defs>
 
-    <div class="grid-2" style="margin-bottom: 16px;">
-      <div class="mirror-card">
-        <span class="pill verde">Tracción</span>
-        <h3>2 clientes activos</h3>
-        <p>Studio A Luxe (automatización) y Javier Velázquez (tienda Shopify + bot + ads). Base mínima, suficiente para validar oferta pero no para sostener crecimiento sin sumar nuevos.</p>
-      </div>
-      <div class="mirror-card">
-        <span class="pill rojo">Canal</span>
-        <h3>Pautas validadas como mal canal</h3>
-        <p>Las pruebas pagadas no convirtieron al volumen ni al costo objetivo. Confirmado: B2B de servicios profesionales a este nivel crece por outbound directo y referidos, no por ads de adquisición.</p>
-      </div>
-    </div>
+      <!-- Barrel (cylindrical part with bristles) -->
+      <g transform="rotate(-20 200 200)">
+        <!-- Bristles dots pattern around barrel -->
+        <rect x="80" y="155" width="240" height="58" rx="29" fill="url(#barrelGrad)"/>
+        <rect x="80" y="155" width="240" height="58" rx="29" fill="url(#barrelGlow)"/>
 
-    <div class="grid-2">
-      <div class="mirror-card">
-        <span class="pill naranja">Operación</span>
-        <h3>Equipo = una persona</h3>
-        <p>Toda la operación (venta, propuesta, ejecución, entrega) la hace Juan. Sin estructura para escalar volumen sin saturarse, y sin reemplazo si Juan está en otro frente (Ziklo).</p>
+        <!-- Bristle pattern -->
+        <g opacity="0.7">
+          <circle cx="110" cy="170" r="2.5" fill="#0f172a"/>
+          <circle cx="135" cy="167" r="2.5" fill="#0f172a"/>
+          <circle cx="160" cy="170" r="2.5" fill="#0f172a"/>
+          <circle cx="185" cy="167" r="2.5" fill="#0f172a"/>
+          <circle cx="210" cy="170" r="2.5" fill="#0f172a"/>
+          <circle cx="235" cy="167" r="2.5" fill="#0f172a"/>
+          <circle cx="260" cy="170" r="2.5" fill="#0f172a"/>
+          <circle cx="285" cy="170" r="2.5" fill="#0f172a"/>
+
+          <circle cx="110" cy="200" r="2.5" fill="#0f172a"/>
+          <circle cx="135" cy="203" r="2.5" fill="#0f172a"/>
+          <circle cx="160" cy="200" r="2.5" fill="#0f172a"/>
+          <circle cx="185" cy="203" r="2.5" fill="#0f172a"/>
+          <circle cx="210" cy="200" r="2.5" fill="#0f172a"/>
+          <circle cx="235" cy="203" r="2.5" fill="#0f172a"/>
+          <circle cx="260" cy="200" r="2.5" fill="#0f172a"/>
+          <circle cx="285" cy="200" r="2.5" fill="#0f172a"/>
+        </g>
+
+        <!-- End cap with logo -->
+        <circle cx="80" cy="184" r="29" fill="url(#endCap)"/>
+        <circle cx="80" cy="184" r="22" fill="none" stroke="url(#ringGrad)" stroke-width="2"/>
+        <text x="80" y="188" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#fff" letter-spacing="1">PF</text>
+
+        <!-- Top accent line -->
+        <rect x="100" y="158" width="200" height="2" rx="1" fill="url(#ringGrad)" opacity="0.6"/>
+
+        <!-- Decorative ring near tip -->
+        <rect x="305" y="155" width="4" height="58" rx="2" fill="url(#ringGrad)"/>
+        <rect x="313" y="155" width="2" height="58" fill="#374151"/>
+
+        <!-- Tip cap -->
+        <rect x="316" y="162" width="14" height="44" rx="6" fill="#1f2937"/>
+
+        <!-- Connection neck -->
+        <path d="M 95 213 Q 130 245 165 290" stroke="#1f2937" stroke-width="32" stroke-linecap="round" fill="none"/>
+        <path d="M 95 213 Q 130 245 165 290" stroke="url(#handleGrad)" stroke-width="28" stroke-linecap="round" fill="none"/>
+
+        <!-- Handle -->
+        <rect x="148" y="285" width="38" height="100" rx="19" fill="url(#handleGrad)"/>
+
+        <!-- Power button on handle -->
+        <circle cx="167" cy="310" r="9" fill="#0f172a" stroke="#374151" stroke-width="1.5"/>
+        <circle cx="167" cy="310" r="3.5" fill="url(#ringGrad)"/>
+
+        <!-- Heat indicator LED -->
+        <rect x="159" y="325" width="16" height="3" rx="1.5" fill="url(#ringGrad)" opacity="0.9"/>
+        <rect x="159" y="332" width="16" height="3" rx="1.5" fill="url(#ringGrad)" opacity="0.5"/>
+        <rect x="159" y="339" width="16" height="3" rx="1.5" fill="url(#ringGrad)" opacity="0.25"/>
+
+        <!-- Brand mark on handle -->
+        <text x="167" y="370" text-anchor="middle" font-family="Inter, sans-serif" font-size="6" font-weight="700" fill="#8888a0" letter-spacing="1.5">PLASMA</text>
+      </g>
+
+      <!-- Ambient glow particles -->
+      <circle cx="320" cy="100" r="3" fill="#ec4899" opacity="0.6"/>
+      <circle cx="80" cy="320" r="2" fill="#8b5cf6" opacity="0.5"/>
+      <circle cx="350" cy="280" r="2.5" fill="#f59e0b" opacity="0.4"/>
+    </svg>
+
+    <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 3; background: rgba(62,39,35,0.85); backdrop-filter: blur(10px); padding: 6px 14px; border-radius: 50px; font-size: 10px; color: var(--cream); letter-spacing: 1px; text-transform: uppercase; font-weight: 600; border: 1px solid rgba(184,115,51,0.3);">
+      Imagen referencial, pendiente foto real
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="problem">
+  <div class="section-inner center">
+    <span class="section-label">El problema</span>
+    <h2 class="section-title">Tres herramientas, tres tiempos, <span class="accent">tres veces el daño.</span></h2>
+    <p class="section-subtitle">Cada vez que peinas tu cabello en casa pasas por lo mismo, mucho tiempo, varias herramientas y un acabado que nunca queda igual al del salón.</p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="num">01</div>
+        <h3>Demasiado tiempo</h3>
+        <p>Secadora, plancha y cepillo. Hasta una hora cada vez para conseguir un resultado decente.</p>
       </div>
-      <div class="mirror-card">
-        <span class="pill morado">Pipeline</span>
-        <h3>Cero pipeline cualificado</h3>
-        <p>Hoy no hay lista de prospectos en seguimiento. Cada cliente nuevo aparece por casualidad o referido informal. Vulnerabilidad: si un cliente actual cierra contrato, no hay reemplazo en cola.</p>
+      <div class="problem-card">
+        <div class="num">02</div>
+        <h3>Daño acumulado</h3>
+        <p>Pasar por tres herramientas calientes seca, debilita y maltrata el cabello con el tiempo.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">03</div>
+        <h3>Resultado inconsistente</h3>
+        <p>Sin volumen, sin ondas duraderas, sin el brillo que esperas. Repetir todos los días es frustrante.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- SECCIÓN 2: OFERTA EMPACADA -->
-  <div class="section">
-    <div class="section-header">
-      <div class="tag">02 · Oferta empacada</div>
-      <h2>Qué vende EnLínea</h2>
-      <p>4 servicios diferenciados con scope y precio claros. Esta es la respuesta corta cuando alguien pregunta "y tú qué haces". Nada de consultoría genérica.</p>
+<!-- TECNOLOGIA -->
+<section class="tech" id="tecnologia">
+  <div class="section-inner">
+    <div class="center" style="margin-bottom: 40px;">
+      <span class="section-label">La tecnología</span>
+      <h2 class="section-title">Lo que <span class="accent">no tiene un cepillo común.</span></h2>
+      <p class="section-subtitle">Plasma Flow integra dos tecnologías que normalmente solo se encuentran en herramientas profesionales de salón.</p>
     </div>
 
-    <div class="grid-2" style="margin-bottom: 16px;">
-      <div class="service-card">
-        <div class="s-tag">Servicio 01</div>
-        <h3>Manejo de campañas Meta Ads</h3>
-        <div class="s-model">Recurrente · sin compromiso de plazo</div>
-        <div class="s-price">$400 / mes</div>
-        <div class="s-price-sub">Más inversión publicitaria a cuenta del cliente</div>
-        <div class="s-includes">
-          <ul>
-            <li>Estrategia y configuración de campañas</li>
-            <li>Creación de segmentos y públicos</li>
-            <li>Gestión y optimización continua</li>
-            <li>Reporte mensual de inversión y resultados</li>
-          </ul>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <span class="tag">Generador de Plasma</span>
+        <h3>Brillo de salón en cada pasada</h3>
+        <p>El generador de plasma libera iones que sellan la cutícula del cabello, eliminan el frizz y aportan un brillo profesional. El mismo principio que usan los estilistas para ese acabado pulido y de revista.</p>
+      </div>
+      <div class="tech-card rose">
+        <span class="tag">Tecnología Infrarroja</span>
+        <h3>Calor que cuida, no que daña</h3>
+        <p>El calor infrarrojo penetra el cabello desde adentro hacia afuera. Reduce el daño térmico, estimula el cuero cabelludo y favorece un cabello más fuerte con el tiempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios">
+  <div class="section-inner center">
+    <span class="section-label">Por qué Plasma Flow</span>
+    <h2 class="section-title">Todo lo que necesitas para <span class="accent">peinarte como en el salón.</span></h2>
+
+    <div class="benefits-grid" style="margin-top: 40px;">
+      <div class="benefit">
+        <div class="icon">⚡</div>
+        <h3>Resultados en minutos</h3>
+        <p>Una sola pasada. Sin secadora, sin plancha, sin pasos extra.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">✨</div>
+        <h3>Brillo que dura</h3>
+        <p>El plasma sella la cutícula y aporta brillo profesional inmediato.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">🛡️</div>
+        <h3>Cabello protegido</h3>
+        <p>Tecnología infrarroja que minimiza el daño del calor.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">🎨</div>
+        <h3>Volumen, ondas y forma</h3>
+        <p>Tres acabados con la misma herramienta, según cómo la uses.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">🔒</div>
+        <h3>Bloqueo de seguridad</h3>
+        <p>Bloqueo automático de temperatura. Apagado a los 30 minutos.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">🌐</div>
+        <h3>Voltaje universal</h3>
+        <p>Funciona con 100 a 240V. Llévalo a cualquier viaje.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs" id="especificaciones">
+  <div class="section-inner">
+    <div class="center">
+      <span class="section-label">Especificaciones</span>
+      <h2 class="section-title">Los datos <span class="accent">que importan.</span></h2>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-item">
+        <span class="label">Voltaje</span>
+        <span class="value">100 a 240V, 50/60 Hz</span>
+      </div>
+      <div class="spec-item">
+        <span class="label">Potencia</span>
+        <span class="value">80W</span>
+      </div>
+      <div class="spec-item">
+        <span class="label">Temperatura ajustable</span>
+        <span class="value">140°C a 232°C (285°F a 450°F)</span>
+      </div>
+      <div class="spec-item">
+        <span class="label">Diámetro del barril</span>
+        <span class="value">45mm × 100mm de largo</span>
+      </div>
+      <div class="spec-item">
+        <span class="label">Tecnología</span>
+        <span class="value">Generador de plasma + infrarrojo</span>
+      </div>
+      <div class="spec-item">
+        <span class="label">Cable</span>
+        <span class="value">Giratorio de 2 metros</span>
+      </div>
+      <div class="spec-item">
+        <span class="label">Bloqueo de seguridad</span>
+        <span class="value">Automático, doble pulsación para desbloquear</span>
+      </div>
+      <div class="spec-item">
+        <span class="label">Apagado automático</span>
+        <span class="value">A los 30 minutos</span>
+      </div>
+      <div class="spec-item">
+        <span class="label">Tipo de cabello</span>
+        <span class="value">Solo para cabello seco</span>
+      </div>
+      <div class="spec-item">
+        <span class="label">Garantía</span>
+        <span class="value">12 meses de fábrica</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARACION -->
+<section class="compare-section">
+  <div class="section-inner">
+    <div class="center">
+      <span class="section-label">Compara</span>
+      <h2 class="section-title">Plasma Flow vs <span class="accent">la rutina tradicional.</span></h2>
+    </div>
+
+    <div class="compare-table">
+      <div class="compare-row head">
+        <div>Característica</div>
+        <div class="pf-col">Plasma Flow</div>
+        <div>Cepillo común</div>
+        <div>Plancha + secador</div>
+      </div>
+      <div class="compare-row">
+        <div>Tres en uno</div>
+        <div class="pf-col"><span class="yes">✓</span></div>
+        <div><span class="no">✕</span></div>
+        <div><span class="no">✕</span></div>
+      </div>
+      <div class="compare-row">
+        <div>Tecnología de plasma</div>
+        <div class="pf-col"><span class="yes">✓</span></div>
+        <div><span class="no">✕</span></div>
+        <div><span class="no">✕</span></div>
+      </div>
+      <div class="compare-row">
+        <div>Calor infrarrojo</div>
+        <div class="pf-col"><span class="yes">✓</span></div>
+        <div><span class="no">✕</span></div>
+        <div><span class="no">✕</span></div>
+      </div>
+      <div class="compare-row">
+        <div>Tiempo de peinado</div>
+        <div class="pf-col">5 a 10 min</div>
+        <div>20 min</div>
+        <div>40 a 60 min</div>
+      </div>
+      <div class="compare-row">
+        <div>Reduce frizz</div>
+        <div class="pf-col"><span class="yes">✓</span></div>
+        <div><span class="no">✕</span></div>
+        <div>Parcial</div>
+      </div>
+      <div class="compare-row">
+        <div>Bloqueo de seguridad</div>
+        <div class="pf-col"><span class="yes">✓</span></div>
+        <div><span class="no">✕</span></div>
+        <div><span class="no">✕</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section>
+  <div class="section-inner center">
+    <span class="section-label">Lo que dicen</span>
+    <h2 class="section-title">Reseñas <span class="accent">reales de clientas.</span></h2>
+
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Reduje el tiempo de mi rutina a la mitad. El brillo es real, no es marketing. Lo recomiendo."</p>
+        <div class="author">
+          <div class="avatar">M</div>
+          <div>
+            <div class="name">María L.</div>
+            <div class="role">Verificada</div>
+          </div>
         </div>
       </div>
-
-      <div class="service-card naranja">
-        <div class="s-tag">Servicio 02</div>
-        <h3>Implementación tienda + automatización</h3>
-        <div class="s-model">Proyecto + recurrente · 3 meses mínimo</div>
-        <div class="s-price">$1,400 + $650/mes</div>
-        <div class="s-price-sub">$1,400 a la firma y entrega · $650/mes desde mes siguiente</div>
-        <div class="s-includes">
-          <ul>
-            <li>Tienda Shopify configurada y lista</li>
-            <li>Bot de atención al cliente</li>
-            <li>Campañas Meta Ads activas</li>
-            <li>Mantenimiento mensual de los 3 sistemas</li>
-            <li>Plazo de entrega: 3 a 4 semanas</li>
-          </ul>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Tengo el cabello muy rebelde y este es el primero que me funciona sin maltratarlo. Vale cada dólar."</p>
+        <div class="author">
+          <div class="avatar">A</div>
+          <div>
+            <div class="name">Andrea P.</div>
+            <div class="role">Verificada</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Lo uso todos los días. El bloqueo de seguridad y el apagado automático me dan tranquilidad."</p>
+        <div class="author">
+          <div class="avatar">S</div>
+          <div>
+            <div class="name">Sofía R.</div>
+            <div class="role">Verificada</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="grid-2">
-      <div class="service-card rosa">
-        <div class="s-tag">Servicio 03</div>
-        <h3>Automatización de procesos</h3>
-        <div class="s-model">Proyecto · scope variable</div>
-        <div class="s-price">Cotización por scope</div>
-        <div class="s-price-sub">Mejora y automatización de procesos manuales del cliente</div>
-        <div class="s-includes">
-          <ul>
-            <li>Auditoría de procesos manuales actuales</li>
-            <li>Diseño de flujo automatizado</li>
-            <li>Implementación con n8n / Zapier / scripts</li>
-            <li>Integraciones (WhatsApp, Alegra, CRMs, etc.)</li>
-            <li>Capacitación al equipo del cliente</li>
-          </ul>
-        </div>
-      </div>
+    <p class="testi-note">Reseñas de muestra. Se reemplazarán con reseñas reales una vez se reciban.</p>
+  </div>
+</section>
 
-      <div class="service-card morado">
-        <div class="s-tag">Servicio 04</div>
-        <h3>Consultoría / estudio de territorio</h3>
-        <div class="s-model">Proyecto · scope variable</div>
-        <div class="s-price">Cotización por scope</div>
-        <div class="s-price-sub">Diagnóstico estratégico y unificación de marca</div>
-        <div class="s-includes">
-          <ul>
-            <li>Análisis de marca y competencia</li>
-            <li>Definición de territorio y propuesta de valor</li>
-            <li>Recomendación de unificación o separación</li>
-            <li>Entregable estructurado en HTML/PDF</li>
-          </ul>
-        </div>
-      </div>
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-inner">
+    <div class="center">
+      <span class="section-label">Preguntas frecuentes</span>
+      <h2 class="section-title">Lo que <span class="accent">más preguntan.</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Funciona en cabello mojado?</summary>
+        <div class="answer">No. Plasma Flow está diseñado únicamente para cabello seco. Para cabello mojado se recomienda secarlo primero con una toalla o secadora.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Sirve para todo tipo de cabello?</summary>
+        <div class="answer">Sí. Funciona en cabello fino, grueso, liso, ondulado y con rizos. La temperatura ajustable de 140°C a 232°C permite adaptarlo a cada tipo.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto tiempo dura el peinado?</summary>
+        <div class="answer">Gracias al sellado de la cutícula con tecnología de plasma, el peinado se mantiene durante todo el día y resiste mejor la humedad que con métodos tradicionales.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Daña el cabello con el uso diario?</summary>
+        <div class="answer">No. La tecnología infrarroja minimiza el daño térmico que producen las herramientas convencionales. Aun así, recomendamos usar siempre un protector térmico.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo viajar con él?</summary>
+        <div class="answer">Sí. Funciona con voltaje universal de 100 a 240V, así que puedes usarlo en cualquier país sin necesidad de adaptador de voltaje.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto tarda el envío en Panamá?</summary>
+        <div class="answer">El envío dentro de la Ciudad de Panamá toma de 1 a 2 días hábiles. Al interior toma de 3 a 5 días hábiles.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Tiene garantía?</summary>
+        <div class="answer">Sí. Plasma Flow cuenta con garantía de fábrica por 12 meses contra defectos de manufactura.</div>
+      </details>
     </div>
   </div>
+</section>
 
-  <!-- SECCIÓN 3: CASOS ACTIVOS -->
-  <div class="section">
-    <div class="section-header">
-      <div class="tag">03 · Casos activos</div>
-      <h2>Quiénes son los clientes activos</h2>
-      <p>Social proof concreto. Usar como referencia en outreach y propuestas. Cada caso valida un servicio distinto.</p>
+<!-- GARANTIA -->
+<section class="warranty">
+  <div class="warranty-inner">
+    <div class="warranty-icon">🛡️</div>
+    <h2>Garantía de 12 meses</h2>
+    <p>Si tu Plasma Flow presenta cualquier defecto de fábrica dentro del primer año, te lo cambiamos sin preguntas. Quédate tranquila, estamos contigo.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="comprar">
+  <div class="section-inner">
+    <h2>Lista para tu mejor cabello.</h2>
+    <p>Edición limitada con descuento de lanzamiento.</p>
+
+    <div class="price-row">
+      <span class="price-current">$129.99</span>
+      <span class="price-original">$189.99</span>
+      <span class="price-save">Ahorra 32%</span>
     </div>
 
-    <div class="grid-2">
-      <div class="case-card">
-        <div class="c-name">Studio A Luxe</div>
-        <div class="c-service">Servicio 03 · Automatización</div>
-        <div class="c-scope">Automatización integral de operación de venta consignada: registro de venta, comisiones por escalón, notificaciones WhatsApp (Meta Cloud API), creación automática de cliente en Alegra, manejo de inventario.</div>
-        <div class="c-revenue">
-          <span class="label">Modelo</span>
-          <span class="value">Proyecto</span>
-        </div>
-      </div>
+    <a href="#" class="btn-primary">Comprar ahora</a>
 
-      <div class="case-card">
-        <div class="c-name">Javier Velázquez</div>
-        <div class="c-service">Servicio 02 · Tienda + automatización</div>
-        <div class="c-scope">Implementación de tienda Shopify, bot de atención al cliente y campañas Meta Ads. Mensualidad recurrente con compromiso mínimo de 3 meses. Plazo de entrega de 3 a 4 semanas.</div>
-        <div class="c-revenue">
-          <span class="label">Recurrente</span>
-          <span class="value">$650/mes</span>
-        </div>
-      </div>
+    <div class="trust-row" style="justify-content: center; margin-top: 28px;">
+      <div class="trust-item"><span class="check">✓</span> Envío a todo Panamá</div>
+      <div class="trust-item"><span class="check">✓</span> Garantía de 12 meses</div>
+      <div class="trust-item"><span class="check">✓</span> Pago con tarjeta o Yappy</div>
     </div>
   </div>
+</section>
 
-  <!-- SECCIÓN 4: PLAN POR SEMANAS -->
-  <div class="section">
-    <div class="section-header">
-      <div class="tag">04 · Plan de adquisición por semanas</div>
-      <h2>Cómo se consiguen clientes este mes</h2>
-      <p>Adquisición por outbound directo y referidos sistematizados. Sin pautas. Plan compacto, ejecutable por una sola persona en menos de 4 horas semanales dedicadas.</p>
-    </div>
-
-    <div class="week-block">
-      <div class="week-side">
-        <div class="week-num">Semana 1</div>
-        <div class="week-dates">28 abril → 4 mayo</div>
-        <div class="week-focus">Foco: armar la maquinaria de outreach.</div>
-      </div>
-      <div>
-        <ul>
-          <li>Definir cliente ideal en una línea (sector, tamaño, tipo de problema que se resuelve)</li>
-          <li>Construir lista de 30 prospectos panameños concretos (nombres + correos + LinkedIn cuando aplique)</li>
-          <li>Redactar 1 template de email de outreach por servicio (Servicios 01, 02, 03 a candidatos por sector)</li>
-          <li>Activar pedido de referidos a los 3 clientes actuales: 1 mensaje claro pidiendo 2 nombres cada uno</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="week-block">
-      <div class="week-side">
-        <div class="week-num">Semana 2</div>
-        <div class="week-dates">5 mayo → 11 mayo</div>
-        <div class="week-focus">Foco: enviar volumen.</div>
-      </div>
-      <div>
-        <ul>
-          <li>Enviar los 30 emails (10 por día durante 3 días, no en bloque)</li>
-          <li>Hacer seguimiento de quién abrió y respondió (en Notion o spreadsheet simple)</li>
-          <li>Procesar referidos recibidos: contacto inicial dentro de 48h</li>
-          <li>Tener lista 1 propuesta plug-and-play por servicio (formato Notion o Google Doc para llenar rápido)</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="week-block">
-      <div class="week-side">
-        <div class="week-num">Semana 3</div>
-        <div class="week-dates">12 mayo → 18 mayo</div>
-        <div class="week-focus">Foco: convertir.</div>
-      </div>
-      <div>
-        <ul>
-          <li>Follow-up de segunda ronda a quienes no respondieron (mensaje distinto, no recordatorio)</li>
-          <li>Reuniones agendadas (presenciales o virtuales) con interesados</li>
-          <li>Enviar propuestas formales a quienes pidieron una</li>
-          <li>Refinar argumentos según objeciones que aparecieron</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="week-block">
-      <div class="week-side">
-        <div class="week-num">Semana 4</div>
-        <div class="week-dates">19 mayo → 27 mayo</div>
-        <div class="week-focus">Foco: cerrar y aprender.</div>
-      </div>
-      <div>
-        <ul>
-          <li>Cerrar al menos 1 cliente nuevo (firma o cuota inicial)</li>
-          <li>Calcular conversion rate: emails enviados → respuestas → reuniones → propuestas → cierres</li>
-          <li>Documentar qué funcionó (template, sector, tipo de cliente) y qué no</li>
-          <li>Lista actualizada para mes 2 con 30 prospectos nuevos</li>
-        </ul>
-      </div>
-    </div>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="logo">PLASMA FLOW</div>
+  <p>Cepillo rizador con tecnología de plasma e infrarrojo.</p>
+  <p>Panamá, Rep. de Panamá</p>
+  <div class="legal">
+    © 2026 Plasma Flow. Todos los derechos reservados.
   </div>
+</footer>
 
-  <!-- SECCIÓN 5: ROLES Y OPERACIÓN -->
-  <div class="section">
-    <div class="section-header">
-      <div class="tag">05 · Roles y operación</div>
-      <h2>Quién hace qué</h2>
-      <p>Estructura mínima para que crecer no signifique colapsar. Las casillas con borde discontinuo están pendientes de definir.</p>
-    </div>
-
-    <div class="grid-3">
-      <div class="role-card">
-        <div class="r-name">Juan David Valdés</div>
-        <div class="r-position">Fundador · CEO</div>
-        <div class="r-resp">
-          <ul>
-            <li>Venta directa (outbound, propuestas, cierre)</li>
-            <li>Ejecución técnica (n8n, Shopify, ads)</li>
-            <li>Relación con clientes activos</li>
-            <li>Decisiones estratégicas y de oferta</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="role-card placeholder">
-        <div class="r-name">Valeria</div>
-        <div class="r-position">Rol a definir</div>
-        <div class="r-resp">
-          <ul>
-            <li>Definir si se involucra en operación, venta, contenido o ejecución</li>
-            <li>Definir tiempo dedicado por semana</li>
-            <li>Definir modelo de compensación</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="role-card placeholder">
-        <div class="r-name">Externos / freelancers</div>
-        <div class="r-position">Activación condicional</div>
-        <div class="r-resp">
-          <ul>
-            <li>Activar cuando volumen lo requiera (más de 5 clientes activos)</li>
-            <li>Posibles roles: diseño, copy, soporte de ejecución</li>
-            <li>Modelo: por proyecto o por hora</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECCIÓN 6: DECISIONES PENDIENTES -->
-  <div class="section">
-    <div class="section-header">
-      <div class="tag">06 · Decisiones que cierras este mes</div>
-      <h2>Lo que tú tienes que definir</h2>
-      <p>Sin estas decisiones cerradas, el plan se ejecuta a medias. Cada una tiene fecha objetivo dentro del mes.</p>
-    </div>
-
-    <div class="decision-card">
-      <div class="d-label">Decisión 01 · S1</div>
-      <div class="d-title">Target de clientes nuevos del mes</div>
-      <div class="d-context">Número concreto. 1, 2, 3 o más. Calibra agresividad de outreach y tamaño de pipeline.</div>
-      <div class="d-fill">Target: ___ clientes nuevos firmados antes del 27 mayo</div>
-    </div>
-
-    <div class="decision-card">
-      <div class="d-label">Decisión 02 · S1</div>
-      <div class="d-title">Sectores prioritarios para outreach</div>
-      <div class="d-context">No es lo mismo apuntar a retail que a clínicas o a despachos profesionales. Cada sector requiere lenguaje y referencia distinta. Elige máximo 3 para concentrar.</div>
-      <div class="d-fill">Sector 1: ____ · Sector 2: ____ · Sector 3: ____</div>
-    </div>
-
-    <div class="decision-card">
-      <div class="d-label">Decisión 03 · S2</div>
-      <div class="d-title">Comisión / sistema de referidos</div>
-      <div class="d-context">¿Pagas comisión a quien te refiera? ¿Cuánto? ¿Solo a clientes actuales o también externos? Si lo dejas informal, la red no se activa con consistencia.</div>
-      <div class="d-fill">% comisión: ___ · A quién aplica: ___ · Cómo se paga: ___</div>
-    </div>
-
-    <div class="decision-card">
-      <div class="d-label">Decisión 04 · S1</div>
-      <div class="d-title">Rol de Valeria en EnLínea</div>
-      <div class="d-context">Conversación pendiente directa con ella. El rol define si EnLínea sigue siendo proyecto unipersonal o pasa a ser dúo, lo cual cambia capacidad y velocidad.</div>
-      <div class="d-fill">Rol: ____ · Tiempo semanal: ___ · Compensación: ____</div>
-    </div>
-  </div>
-
-  <!-- SECCIÓN 7: MÉTRICAS -->
-  <div class="section">
-    <div class="section-header">
-      <div class="tag">07 · Métricas que cierran el mes</div>
-      <h2>Cómo sabes si funcionó</h2>
-      <p>Set fijo. Se mide el 27 de mayo y se lleva al plan del mes 2.</p>
-    </div>
-
-    <div class="kpi-row" style="margin-bottom: 14px;">
-      <div class="kpi">
-        <div class="label">MRR actual</div>
-        <div class="value">$ ___</div>
-        <div class="sub">recurrente mensual</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Propuestas enviadas</div>
-        <div class="value">___</div>
-        <div class="sub">en el mes</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Clientes nuevos</div>
-        <div class="value">___</div>
-        <div class="sub">vs target Decisión 01</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Conversion rate</div>
-        <div class="value">___ %</div>
-        <div class="sub">propuesta a cierre</div>
-      </div>
-    </div>
-
-    <div class="kpi-row">
-      <div class="kpi">
-        <div class="label">Emails outbound</div>
-        <div class="value">___</div>
-        <div class="sub">objetivo: 30+</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Tasa de respuesta</div>
-        <div class="value">___ %</div>
-        <div class="sub">respuestas / enviados</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Reuniones agendadas</div>
-        <div class="value">___</div>
-        <div class="sub">de outreach + referidos</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Referidos recibidos</div>
-        <div class="value">___</div>
-        <div class="sub">de los 3 clientes actuales</div>
-      </div>
-    </div>
-
-    <div class="note">
-      <strong>Cómo se mide:</strong> tracking simple en Notion o spreadsheet. No requiere CRM completo en el mes 1. Si se valida volumen, en el mes 2 se evalúa CRM ligero.
-    </div>
-  </div>
-
-  <!-- SECCIÓN 8: NO ALCANCE -->
-  <div class="section">
-    <div class="section-header">
-      <div class="tag">08 · Lo que NO está en alcance este mes</div>
-      <h2>Lo que se queda fuera para no diluir foco</h2>
-      <p>Mes 1 es base de adquisición. Lo demás puede ser válido pero distrae. Si aparece como tentación, se anota para el mes 2.</p>
-    </div>
-
-    <div class="out-list">
-      <div class="out-item">Pautas pagadas de adquisición (validado mal canal)</div>
-      <div class="out-item">Eventos / networking presencial sistemático</div>
-      <div class="out-item">Contratación de equipo full-time</div>
-      <div class="out-item">Programa de referidos formal con landing</div>
-      <div class="out-item">Rediseño completo de identidad visual</div>
-      <div class="out-item">Lanzar nuevo servicio fuera de los 4 actuales</div>
-      <div class="out-item">CRM completo (HubSpot, Pipedrive)</div>
-      <div class="out-item">Expansión a clientes fuera de Panamá</div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    Plan de Crecimiento EnLínea Solutions · 27 abril → 27 mayo 2026<br>
-    Documento vivo · revisión semanal · cierre 27 mayo<br>
-    <a href="https://enlineasolutions.com" target="_blank">enlineasolutions.com</a> · hola@enlineasolutions.com
-  </div>
-
-</div>
 </body>
 </html>

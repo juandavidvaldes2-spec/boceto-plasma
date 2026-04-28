@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnLínea Solutions - Plan de Crecimiento Abril-Mayo 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #050508;
+    --card: #0f0f18;
+    --card-border: #1e1e2e;
+    --turquesa: #7fd3c2;
+    --turquesa-dim: rgba(127,211,194,0.15);
+    --naranja: #f59e0b;
+    --naranja-dim: rgba(245,158,11,0.15);
+    --rojo: #ef4444;
+    --rojo-dim: rgba(239,68,68,0.12);
+    --verde: #22c55e;
+    --verde-dim: rgba(34,197,94,0.12);
+    --azul: #3b82f6;
+    --azul-dim: rgba(59,130,246,0.12);
+    --morado: #a78bfa;
+    --morado-dim: rgba(167,139,250,0.15);
+    --rosa: #f472b6;
+    --rosa-dim: rgba(244,114,182,0.15);
+    --text: #eeeef2;
+    --text-dim: #8888a0;
+    --text-muted: #55556a;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .page-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  /* Cover */
+  .cover {
+    text-align: center;
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 48px;
+  }
+  .cover .subtitle {
+    font-size: 18px; font-weight: 300; color: var(--text-dim);
+    letter-spacing: 4px; text-transform: uppercase; margin-bottom: 12px;
+  }
+  .cover .subtitle .accent { color: var(--turquesa); font-weight: 600; }
+  .cover h1 { font-size: 44px; font-weight: 800; letter-spacing: -1px; }
+  .cover .period { font-size: 14px; color: var(--text-muted); margin-top: 14px; letter-spacing: 1px; }
+  .cover .badge {
+    display: inline-block; background: var(--turquesa-dim); color: var(--turquesa);
+    padding: 8px 24px; border-radius: 100px; font-size: 12px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase; margin-top: 24px;
+  }
+  .cover .doc-purpose {
+    margin-top: 32px;
+    font-size: 14px;
+    color: var(--text-dim);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  /* Section */
+  .section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-header { margin-bottom: 32px; }
+  .section-header .tag {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--turquesa); margin-bottom: 8px;
+  }
+  .section-header h2 { font-size: 30px; font-weight: 800; letter-spacing: -1px; line-height: 1.15; }
+  .section-header p { color: var(--text-dim); font-size: 14px; margin-top: 8px; max-width: 720px; }
+
+  /* Grids */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+
+  /* Mirror cards */
+  .mirror-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; }
+  .mirror-card .pill { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  .mirror-card .pill.naranja { background: var(--naranja-dim); color: var(--naranja); }
+  .mirror-card .pill.rojo { background: var(--rojo-dim); color: var(--rojo); }
+  .mirror-card .pill.azul { background: var(--azul-dim); color: var(--azul); }
+  .mirror-card .pill.morado { background: var(--morado-dim); color: var(--morado); }
+  .mirror-card .pill.rosa { background: var(--rosa-dim); color: var(--rosa); }
+  .mirror-card .pill.verde { background: var(--verde-dim); color: var(--verde); }
+  .mirror-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .mirror-card p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+
+  /* Service card */
+  .service-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .service-card .s-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--turquesa); margin-bottom: 8px; }
+  .service-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
+  .service-card .s-model { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; letter-spacing: 0.5px; }
+  .service-card .s-price { font-size: 26px; font-weight: 800; color: var(--turquesa); margin-bottom: 4px; letter-spacing: -0.5px; }
+  .service-card .s-price-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 16px; }
+  .service-card .s-includes { font-size: 13px; color: var(--text); }
+  .service-card .s-includes ul { list-style: none; padding: 0; margin: 8px 0 0; }
+  .service-card .s-includes li { padding-left: 16px; position: relative; margin-bottom: 6px; line-height: 1.5; color: var(--text-dim); }
+  .service-card .s-includes li::before { content: "+"; position: absolute; left: 0; color: var(--turquesa); font-weight: 700; }
+
+  .service-card.naranja .s-tag { color: var(--naranja); }
+  .service-card.naranja .s-price { color: var(--naranja); }
+  .service-card.naranja .s-includes li::before { color: var(--naranja); }
+
+  .service-card.rosa .s-tag { color: var(--rosa); }
+  .service-card.rosa .s-price { color: var(--rosa); }
+  .service-card.rosa .s-includes li::before { color: var(--rosa); }
+
+  .service-card.morado .s-tag { color: var(--morado); }
+  .service-card.morado .s-price { color: var(--morado); }
+  .service-card.morado .s-includes li::before { color: var(--morado); }
+
+  /* Case card */
+  .case-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .case-card .c-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .case-card .c-service { font-size: 11px; color: var(--turquesa); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+  .case-card .c-scope { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin-bottom: 14px; }
+  .case-card .c-revenue { padding-top: 12px; border-top: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center; }
+  .case-card .c-revenue .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+  .case-card .c-revenue .value { font-size: 14px; font-weight: 700; color: var(--turquesa); }
+
+  /* Week block */
+  .week-block {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 14px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+  }
+  .week-block .week-side .week-num { font-size: 11px; font-weight: 800; color: var(--turquesa); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+  .week-block .week-side .week-dates { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .week-block .week-side .week-focus { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+  .week-block ul { list-style: none; padding: 0; margin: 0; }
+  .week-block li { font-size: 13.5px; color: var(--text); line-height: 1.6; padding-left: 18px; position: relative; margin-bottom: 8px; }
+  .week-block li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--turquesa); }
+  .week-block li:last-child { margin-bottom: 0; }
+
+  /* Decision card */
+  .decision-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-left: 3px solid var(--naranja);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+  }
+  .decision-card .d-label { font-size: 11px; font-weight: 700; color: var(--naranja); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .decision-card .d-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .decision-card .d-context { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .decision-card .d-fill {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(127,211,194,0.05);
+    border: 1px dashed rgba(127,211,194,0.3);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+
+  /* Role card */
+  .role-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 22px;
+  }
+  .role-card .r-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .role-card .r-position { font-size: 11px; color: var(--turquesa); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+  .role-card .r-resp { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .role-card .r-resp ul { list-style: none; padding: 0; margin: 6px 0 0; }
+  .role-card .r-resp li { padding-left: 14px; position: relative; margin-bottom: 4px; }
+  .role-card .r-resp li::before { content: "→"; position: absolute; left: 0; color: var(--turquesa); }
+  .role-card.placeholder { border-style: dashed; border-color: rgba(127,211,194,0.3); }
+  .role-card.placeholder .r-position { color: var(--text-muted); }
+
+  /* KPI */
+  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .kpi { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; }
+  .kpi .label { font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+  .kpi .value { font-size: 24px; font-weight: 800; margin-top: 6px; letter-spacing: -0.5px; color: var(--turquesa); }
+  .kpi .sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+  /* Out of scope */
+  .out-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .out-item {
+    padding: 14px 18px;
+    background: rgba(239,68,68,0.04);
+    border: 1px solid rgba(239,68,68,0.15);
+    border-radius: 10px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .out-item::before { content: "—"; color: var(--rojo); font-weight: 700; }
+
+  /* Note */
+  .note { padding: 16px 20px; background: var(--turquesa-dim); border: 1px solid rgba(127,211,194,0.25); border-radius: 10px; font-size: 13px; color: var(--turquesa); line-height: 1.6; margin-top: 24px; }
+  .note strong { color: var(--turquesa); font-weight: 700; }
+
+  /* Links */
+  a { color: var(--turquesa); text-decoration: none; border-bottom: 1px dotted var(--turquesa); }
+  a:hover { color: var(--text); border-color: var(--text); }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 60px 0 20px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 800px) {
+    .grid-2, .grid-3, .grid-4, .kpi-row, .out-list {
+      grid-template-columns: 1fr;
+    }
+    .week-block { grid-template-columns: 1fr; gap: 16px; }
+    .page-wrap { padding: 0 20px 60px; }
+    .cover h1 { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="subtitle"><span class="accent">En</span>Línea Solutions</div>
+    <h1>Plan de Crecimiento</h1>
+    <div class="period">27 abril 2026 → 27 mayo 2026 · 4 semanas</div>
+    <div class="badge">Mes 1 · base de adquisición</div>
+    <div class="doc-purpose">
+      Espejo del estado actual, oferta empacada, casos activos y plan de adquisición por semanas.
+      Documento operativo para tomar decisiones sin tener que volver a discutirlas cada vez.
+    </div>
+  </div>
+
+  <!-- SECCIÓN 1: EL ESPEJO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="tag">01 · El Espejo</div>
+      <h2>Cómo está EnLínea hoy</h2>
+      <p>Lectura honesta del estado actual. Si algo cambia a mitad de mes, se actualiza acá primero antes de ajustar el plan.</p>
+    </div>
+
+    <div class="grid-2" style="margin-bottom: 16px;">
+      <div class="mirror-card">
+        <span class="pill verde">Tracción</span>
+        <h3>2 clientes activos</h3>
+        <p>Studio A Luxe (automatización) y Javier Velázquez (tienda Shopify + bot + ads). Base mínima, suficiente para validar oferta pero no para sostener crecimiento sin sumar nuevos.</p>
+      </div>
+      <div class="mirror-card">
+        <span class="pill rojo">Canal</span>
+        <h3>Pautas validadas como mal canal</h3>
+        <p>Las pruebas pagadas no convirtieron al volumen ni al costo objetivo. Confirmado: B2B de servicios profesionales a este nivel crece por outbound directo y referidos, no por ads de adquisición.</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="mirror-card">
+        <span class="pill naranja">Operación</span>
+        <h3>Equipo = una persona</h3>
+        <p>Toda la operación (venta, propuesta, ejecución, entrega) la hace Juan. Sin estructura para escalar volumen sin saturarse, y sin reemplazo si Juan está en otro frente (Ziklo).</p>
+      </div>
+      <div class="mirror-card">
+        <span class="pill morado">Pipeline</span>
+        <h3>Cero pipeline cualificado</h3>
+        <p>Hoy no hay lista de prospectos en seguimiento. Cada cliente nuevo aparece por casualidad o referido informal. Vulnerabilidad: si un cliente actual cierra contrato, no hay reemplazo en cola.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 2: OFERTA EMPACADA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="tag">02 · Oferta empacada</div>
+      <h2>Qué vende EnLínea</h2>
+      <p>4 servicios diferenciados con scope y precio claros. Esta es la respuesta corta cuando alguien pregunta "y tú qué haces". Nada de consultoría genérica.</p>
+    </div>
+
+    <div class="grid-2" style="margin-bottom: 16px;">
+      <div class="service-card">
+        <div class="s-tag">Servicio 01</div>
+        <h3>Manejo de campañas Meta Ads</h3>
+        <div class="s-model">Recurrente · sin compromiso de plazo</div>
+        <div class="s-price">$400 / mes</div>
+        <div class="s-price-sub">Más inversión publicitaria a cuenta del cliente</div>
+        <div class="s-includes">
+          <ul>
+            <li>Estrategia y configuración de campañas</li>
+            <li>Creación de segmentos y públicos</li>
+            <li>Gestión y optimización continua</li>
+            <li>Reporte mensual de inversión y resultados</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card naranja">
+        <div class="s-tag">Servicio 02</div>
+        <h3>Implementación tienda + automatización</h3>
+        <div class="s-model">Proyecto + recurrente · 3 meses mínimo</div>
+        <div class="s-price">$1,400 + $650/mes</div>
+        <div class="s-price-sub">$1,400 a la firma y entrega · $650/mes desde mes siguiente</div>
+        <div class="s-includes">
+          <ul>
+            <li>Tienda Shopify configurada y lista</li>
+            <li>Bot de atención al cliente</li>
+            <li>Campañas Meta Ads activas</li>
+            <li>Mantenimiento mensual de los 3 sistemas</li>
+            <li>Plazo de entrega: 3 a 4 semanas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="service-card rosa">
+        <div class="s-tag">Servicio 03</div>
+        <h3>Automatización de procesos</h3>
+        <div class="s-model">Proyecto · scope variable</div>
+        <div class="s-price">Cotización por scope</div>
+        <div class="s-price-sub">Mejora y automatización de procesos manuales del cliente</div>
+        <div class="s-includes">
+          <ul>
+            <li>Auditoría de procesos manuales actuales</li>
+            <li>Diseño de flujo automatizado</li>
+            <li>Implementación con n8n / Zapier / scripts</li>
+            <li>Integraciones (WhatsApp, Alegra, CRMs, etc.)</li>
+            <li>Capacitación al equipo del cliente</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card morado">
+        <div class="s-tag">Servicio 04</div>
+        <h3>Consultoría / estudio de territorio</h3>
+        <div class="s-model">Proyecto · scope variable</div>
+        <div class="s-price">Cotización por scope</div>
+        <div class="s-price-sub">Diagnóstico estratégico y unificación de marca</div>
+        <div class="s-includes">
+          <ul>
+            <li>Análisis de marca y competencia</li>
+            <li>Definición de territorio y propuesta de valor</li>
+            <li>Recomendación de unificación o separación</li>
+            <li>Entregable estructurado en HTML/PDF</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 3: CASOS ACTIVOS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="tag">03 · Casos activos</div>
+      <h2>Quiénes son los clientes activos</h2>
+      <p>Social proof concreto. Usar como referencia en outreach y propuestas. Cada caso valida un servicio distinto.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="case-card">
+        <div class="c-name">Studio A Luxe</div>
+        <div class="c-service">Servicio 03 · Automatización</div>
+        <div class="c-scope">Automatización integral de operación de venta consignada: registro de venta, comisiones por escalón, notificaciones WhatsApp (Meta Cloud API), creación automática de cliente en Alegra, manejo de inventario.</div>
+        <div class="c-revenue">
+          <span class="label">Modelo</span>
+          <span class="value">Proyecto</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="c-name">Javier Velázquez</div>
+        <div class="c-service">Servicio 02 · Tienda + automatización</div>
+        <div class="c-scope">Implementación de tienda Shopify, bot de atención al cliente y campañas Meta Ads. Mensualidad recurrente con compromiso mínimo de 3 meses. Plazo de entrega de 3 a 4 semanas.</div>
+        <div class="c-revenue">
+          <span class="label">Recurrente</span>
+          <span class="value">$650/mes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 4: PLAN POR SEMANAS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="tag">04 · Plan de adquisición por semanas</div>
+      <h2>Cómo se consiguen clientes este mes</h2>
+      <p>Adquisición por outbound directo y referidos sistematizados. Sin pautas. Plan compacto, ejecutable por una sola persona en menos de 4 horas semanales dedicadas.</p>
+    </div>
+
+    <div class="week-block">
+      <div class="week-side">
+        <div class="week-num">Semana 1</div>
+        <div class="week-dates">28 abril → 4 mayo</div>
+        <div class="week-focus">Foco: armar la maquinaria de outreach.</div>
+      </div>
+      <div>
+        <ul>
+          <li>Definir cliente ideal en una línea (sector, tamaño, tipo de problema que se resuelve)</li>
+          <li>Construir lista de 30 prospectos panameños concretos (nombres + correos + LinkedIn cuando aplique)</li>
+          <li>Redactar 1 template de email de outreach por servicio (Servicios 01, 02, 03 a candidatos por sector)</li>
+          <li>Activar pedido de referidos a los 3 clientes actuales: 1 mensaje claro pidiendo 2 nombres cada uno</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week-block">
+      <div class="week-side">
+        <div class="week-num">Semana 2</div>
+        <div class="week-dates">5 mayo → 11 mayo</div>
+        <div class="week-focus">Foco: enviar volumen.</div>
+      </div>
+      <div>
+        <ul>
+          <li>Enviar los 30 emails (10 por día durante 3 días, no en bloque)</li>
+          <li>Hacer seguimiento de quién abrió y respondió (en Notion o spreadsheet simple)</li>
+          <li>Procesar referidos recibidos: contacto inicial dentro de 48h</li>
+          <li>Tener lista 1 propuesta plug-and-play por servicio (formato Notion o Google Doc para llenar rápido)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week-block">
+      <div class="week-side">
+        <div class="week-num">Semana 3</div>
+        <div class="week-dates">12 mayo → 18 mayo</div>
+        <div class="week-focus">Foco: convertir.</div>
+      </div>
+      <div>
+        <ul>
+          <li>Follow-up de segunda ronda a quienes no respondieron (mensaje distinto, no recordatorio)</li>
+          <li>Reuniones agendadas (presenciales o virtuales) con interesados</li>
+          <li>Enviar propuestas formales a quienes pidieron una</li>
+          <li>Refinar argumentos según objeciones que aparecieron</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week-block">
+      <div class="week-side">
+        <div class="week-num">Semana 4</div>
+        <div class="week-dates">19 mayo → 27 mayo</div>
+        <div class="week-focus">Foco: cerrar y aprender.</div>
+      </div>
+      <div>
+        <ul>
+          <li>Cerrar al menos 1 cliente nuevo (firma o cuota inicial)</li>
+          <li>Calcular conversion rate: emails enviados → respuestas → reuniones → propuestas → cierres</li>
+          <li>Documentar qué funcionó (template, sector, tipo de cliente) y qué no</li>
+          <li>Lista actualizada para mes 2 con 30 prospectos nuevos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 5: ROLES Y OPERACIÓN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="tag">05 · Roles y operación</div>
+      <h2>Quién hace qué</h2>
+      <p>Estructura mínima para que crecer no signifique colapsar. Las casillas con borde discontinuo están pendientes de definir.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="role-card">
+        <div class="r-name">Juan David Valdés</div>
+        <div class="r-position">Fundador · CEO</div>
+        <div class="r-resp">
+          <ul>
+            <li>Venta directa (outbound, propuestas, cierre)</li>
+            <li>Ejecución técnica (n8n, Shopify, ads)</li>
+            <li>Relación con clientes activos</li>
+            <li>Decisiones estratégicas y de oferta</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="role-card placeholder">
+        <div class="r-name">Valeria</div>
+        <div class="r-position">Rol a definir</div>
+        <div class="r-resp">
+          <ul>
+            <li>Definir si se involucra en operación, venta, contenido o ejecución</li>
+            <li>Definir tiempo dedicado por semana</li>
+            <li>Definir modelo de compensación</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="role-card placeholder">
+        <div class="r-name">Externos / freelancers</div>
+        <div class="r-position">Activación condicional</div>
+        <div class="r-resp">
+          <ul>
+            <li>Activar cuando volumen lo requiera (más de 5 clientes activos)</li>
+            <li>Posibles roles: diseño, copy, soporte de ejecución</li>
+            <li>Modelo: por proyecto o por hora</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 6: DECISIONES PENDIENTES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="tag">06 · Decisiones que cierras este mes</div>
+      <h2>Lo que tú tienes que definir</h2>
+      <p>Sin estas decisiones cerradas, el plan se ejecuta a medias. Cada una tiene fecha objetivo dentro del mes.</p>
+    </div>
+
+    <div class="decision-card">
+      <div class="d-label">Decisión 01 · S1</div>
+      <div class="d-title">Target de clientes nuevos del mes</div>
+      <div class="d-context">Número concreto. 1, 2, 3 o más. Calibra agresividad de outreach y tamaño de pipeline.</div>
+      <div class="d-fill">Target: ___ clientes nuevos firmados antes del 27 mayo</div>
+    </div>
+
+    <div class="decision-card">
+      <div class="d-label">Decisión 02 · S1</div>
+      <div class="d-title">Sectores prioritarios para outreach</div>
+      <div class="d-context">No es lo mismo apuntar a retail que a clínicas o a despachos profesionales. Cada sector requiere lenguaje y referencia distinta. Elige máximo 3 para concentrar.</div>
+      <div class="d-fill">Sector 1: ____ · Sector 2: ____ · Sector 3: ____</div>
+    </div>
+
+    <div class="decision-card">
+      <div class="d-label">Decisión 03 · S2</div>
+      <div class="d-title">Comisión / sistema de referidos</div>
+      <div class="d-context">¿Pagas comisión a quien te refiera? ¿Cuánto? ¿Solo a clientes actuales o también externos? Si lo dejas informal, la red no se activa con consistencia.</div>
+      <div class="d-fill">% comisión: ___ · A quién aplica: ___ · Cómo se paga: ___</div>
+    </div>
+
+    <div class="decision-card">
+      <div class="d-label">Decisión 04 · S1</div>
+      <div class="d-title">Rol de Valeria en EnLínea</div>
+      <div class="d-context">Conversación pendiente directa con ella. El rol define si EnLínea sigue siendo proyecto unipersonal o pasa a ser dúo, lo cual cambia capacidad y velocidad.</div>
+      <div class="d-fill">Rol: ____ · Tiempo semanal: ___ · Compensación: ____</div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 7: MÉTRICAS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="tag">07 · Métricas que cierran el mes</div>
+      <h2>Cómo sabes si funcionó</h2>
+      <p>Set fijo. Se mide el 27 de mayo y se lleva al plan del mes 2.</p>
+    </div>
+
+    <div class="kpi-row" style="margin-bottom: 14px;">
+      <div class="kpi">
+        <div class="label">MRR actual</div>
+        <div class="value">$ ___</div>
+        <div class="sub">recurrente mensual</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Propuestas enviadas</div>
+        <div class="value">___</div>
+        <div class="sub">en el mes</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Clientes nuevos</div>
+        <div class="value">___</div>
+        <div class="sub">vs target Decisión 01</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Conversion rate</div>
+        <div class="value">___ %</div>
+        <div class="sub">propuesta a cierre</div>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="label">Emails outbound</div>
+        <div class="value">___</div>
+        <div class="sub">objetivo: 30+</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Tasa de respuesta</div>
+        <div class="value">___ %</div>
+        <div class="sub">respuestas / enviados</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Reuniones agendadas</div>
+        <div class="value">___</div>
+        <div class="sub">de outreach + referidos</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Referidos recibidos</div>
+        <div class="value">___</div>
+        <div class="sub">de los 3 clientes actuales</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Cómo se mide:</strong> tracking simple en Notion o spreadsheet. No requiere CRM completo en el mes 1. Si se valida volumen, en el mes 2 se evalúa CRM ligero.
+    </div>
+  </div>
+
+  <!-- SECCIÓN 8: NO ALCANCE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="tag">08 · Lo que NO está en alcance este mes</div>
+      <h2>Lo que se queda fuera para no diluir foco</h2>
+      <p>Mes 1 es base de adquisición. Lo demás puede ser válido pero distrae. Si aparece como tentación, se anota para el mes 2.</p>
+    </div>
+
+    <div class="out-list">
+      <div class="out-item">Pautas pagadas de adquisición (validado mal canal)</div>
+      <div class="out-item">Eventos / networking presencial sistemático</div>
+      <div class="out-item">Contratación de equipo full-time</div>
+      <div class="out-item">Programa de referidos formal con landing</div>
+      <div class="out-item">Rediseño completo de identidad visual</div>
+      <div class="out-item">Lanzar nuevo servicio fuera de los 4 actuales</div>
+      <div class="out-item">CRM completo (HubSpot, Pipedrive)</div>
+      <div class="out-item">Expansión a clientes fuera de Panamá</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Plan de Crecimiento EnLínea Solutions · 27 abril → 27 mayo 2026<br>
+    Documento vivo · revisión semanal · cierre 27 mayo<br>
+    <a href="https://enlineasolutions.com" target="_blank">enlineasolutions.com</a> · hola@enlineasolutions.com
+  </div>
+
+</div>
+</body>
+</html>
